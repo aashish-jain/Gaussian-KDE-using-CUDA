@@ -1,16 +1,11 @@
 This code is used to estimate the probability density function of a random variable. 
 
-If X=(x_1,x_2,…,x_n) is a vector that is a sample drawn from some univariate distribution with an unknown density function f,  f can be estimated using 
+If <img src="/tex/c371a73a64c8bc918099b2cdee140718.svg?invert_in_darkmode&sanitize=true" align=middle width=145.32900195pt height=24.65753399999998pt/> is a vector that is a sample drawn from some univariate distribution with an unknown density function f,  f can be estimated using 
 
-<img src="/tex/190b7b0b80e645435e1c076b7cd8b614.svg?invert_in_darkmode&sanitize=true" align=middle width=181.38328725pt height=33.20539859999999pt/>
+<img src="/tex/326347a59923f9940326c8c41e469747.svg?invert_in_darkmode&sanitize=true" align=middle width=184.92213629999998pt height=33.20539859999999pt/>
 
-where h is bandwidth (think smoothing factor), and K is a kernel function. In the specific case of Gaussian kernel density estimate, K is defined as follows: K(x)=1√2πexp(−x22). Given an input vector X=(x1,x2,…,xn), and some predefined bandwidth h, we can estimate density over X, as Y=(y1,y2,…,yn), where yi=^fh(xi). Hence, your task is to compute Y given X and h
+where h is bandwidth, and K is a kernel function defined as
 
-. To solve the problem you may assume the following:
+<img src="/tex/a1bf12ef0169e9dac1938ef5bb028d44.svg?invert_in_darkmode&sanitize=true" align=middle width=161.14117965pt height=36.460254599999985pt/>. So, for a given input vector X and some predefined bandwidth h, we can estimate density over X, as <img src="/tex/3460173881692fcf1792c5968bca39bd.svg?invert_in_darkmode&sanitize=true" align=middle width=139.61004419999998pt height=24.65753399999998pt/>, where <img src="/tex/1eed8e31acde72ccdc18f378f53049f2.svg?invert_in_darkmode&sanitize=true" align=middle width=81.43843124999998pt height=31.50689519999998pt/>. 
 
-    Input vector X
-
-and output vector Y
-are single precision.
-The size n
-of X (and Y) is such that it exceeds capacity of a single CUDA thread block, but is small enough to be processed by a single kernel invocation (e.g. with multiple blocks).
+In this project it is assumed that the input vector X are single precision and X is such that it exceeds capacity of a single CUDA thread block, but is small enough to be processed by a single kernel invocation(e.g. with multiple blocks).
