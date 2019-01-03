@@ -1,8 +1,8 @@
 This code is used to estimate the probability density function of a random variable. 
 
-If X=(x1,x2,…,xn) is a vectir that is a sample drawn from some univariate distribution with an unknown density function f,  f can be estimated using 
+If X=(x_1,x_2,…,x_n) is a vector that is a sample drawn from some univariate distribution with an unknown density function f,  f can be estimated using 
 
-$ f_h(x)=\frac{1}{n*h} K\frac{(x−x_i)}{h}$
+$ \^{f}_h(x)=\frac{1}{n*h} \sum_{i=1}^{n} K\frac{(x−x_i)}{h}$
 
 where h is bandwidth (think smoothing factor), and K is a kernel function. In the specific case of Gaussian kernel density estimate, K is defined as follows: K(x)=1√2πexp(−x22). Given an input vector X=(x1,x2,…,xn), and some predefined bandwidth h, we can estimate density over X, as Y=(y1,y2,…,yn), where yi=^fh(xi). Hence, your task is to compute Y given X and h
 
